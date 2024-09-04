@@ -11,7 +11,7 @@ auto.press('win')
 auto.write('chrome')
 auto.press('enter')
 
-# espera 10 segundos para abrir o vscode e continuar com os comandos
+# espera 1 segundos para abrir o vscode e continuar com os comandos
 time.sleep(1)
 
 # continua as instruções=

@@ -1,4 +1,10 @@
 # 9. Crie um programa onde o usuário cadastre uma quantidade desejada de eventos (nome do evento e classificação indicativa) e após o cadastro dos eventos, o usuário possa informar o nome e a idade, e se inscrever em um dos eventos. Caso o usuário não tenha idade mínima, o programa proíbe a inscrição e pede para o mesmo se inscrever em outro evento. Caso o usuário tenha a idade mínima, o programa inscreve o usuário exibindo a data da inscrição e encerra.
+from datetime import date
+
+dia = date.today().day
+mes = date.today().month
+ano = date.today().year
+
 eventos = []
 
 while True:
@@ -12,14 +18,12 @@ while True:
     else:
         break
 
-#imprime os eventos disponiveis
-print('\nEstes são os eventos disponíveis: ')
-for i, evento in enumerate(eventos):
-    print(f'{i+1}. {evento['nome_evento']} - Classificação: {evento['classificacao']}')
-
-
 while True:
-    nome_usuario = input('Informe seu nome: ')
+    #imprime os eventos disponiveis
+    print('\nEstes são os eventos disponíveis: ')
+    for i, evento in enumerate(eventos):
+        print(f'{i+1}. {evento['nome_evento']} - Classificação: {evento['classificacao']} ')
+    nome_usuario = input('\nInforme seu nome: ')
     idade_usuario = int(input('Informe sua idade: '))
 
     escolha = int(input('Informe o índice do evento que deseja participar: '))
@@ -27,7 +31,8 @@ while True:
     classificacao = int(evento['classificacao'])
 
     if idade_usuario >= classificacao:
-        print(f"{nome_usuario}, você foi inscrito no evento '{evento['nome_evento']}' com sucesso!")
+        print(f'{nome_usuario}, você foi inscrito no evento {evento['nome_evento']} com sucesso! - {dia}/{mes}/{ano}')
         break
     else:
-        print(f"Você não tem a idade mínima para se inscrever no evento '{evento['nome_evento']}'.")
+        print(f'Você não tem a idade mínima para se inscrever no evento {evento['nome_evento']}.')
+        continue
