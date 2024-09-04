@@ -12,12 +12,22 @@ while True:
     else:
         break
 
-print('Estes são os eventos disponíveis: ')
-for evento in eventos:
-    print(evento)
+#imprime os eventos disponiveis
+print('\nEstes são os eventos disponíveis: ')
+for i, evento in enumerate(eventos):
+    print(f'{i+1}. {evento['nome_evento']} - Classificação: {evento['classificacao']}')
 
-idade = int(input('Informe sua idade'))
 
-if idade <= :
-    
+while True:
+    nome_usuario = input('Informe seu nome: ')
+    idade_usuario = int(input('Informe sua idade: '))
 
+    escolha = int(input('Informe o índice do evento que deseja participar: '))
+
+    classificacao = int(evento['classificacao'])
+
+    if idade_usuario >= classificacao:
+        print(f"{nome_usuario}, você foi inscrito no evento '{evento['nome_evento']}' com sucesso!")
+        break
+    else:
+        print(f"Você não tem a idade mínima para se inscrever no evento '{evento['nome_evento']}'.")
